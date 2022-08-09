@@ -4,6 +4,7 @@ import { useState, useEffect } from "react";
 import Words from "./components/Words";
 import Container from "./components/Container";
 import Typeracer from "./components/Typeracer";
+import Results from "./components/Results";
 
 // styles
 import "./App.css";
@@ -31,6 +32,11 @@ function App() {
           disabled={disabled}
           time={time}
           animation={animation}
+        />
+        <Results
+          correctResults={correctResults}
+          wrongResults={wrongResults}
+          countCorrect={countCorrect}
         />
       </Container>
     </div>
