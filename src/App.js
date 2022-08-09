@@ -12,7 +12,7 @@ function App() {
   const [words, setWords] = useState(Words);
   const [newWord, setNewWord] = useState(words[0]);
   const [disabled, setDisabled] = useState(false);
-  const [currResults, setCurrResults] = useState([]);
+  const [correctResults, setCorrectResults] = useState([]);
   const [wrongResults, setWrongResults] = useState([]);
   const [countCorrect, setCountCorrect] = useState(0);
   const [time, setTime] = useState(30);
