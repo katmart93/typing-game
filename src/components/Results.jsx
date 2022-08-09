@@ -12,22 +12,22 @@ export default function Results({
       </div>
       <div className="resultsContainer">
         <div className="correctResults">
-          <p>
+          <div>
             {correctResults.map((correctWord, idx) => (
               <div key={idx} className="row">
                 <p>{correctWord}</p>
               </div>
             ))}
-          </p>
+          </div>
         </div>
         <div className="wrongResults">
-          <p>
+          <div>
             {wrongResults.map((wrongWord, idx) => (
               <div key={idx} className="row">
                 <p>{wrongWord}</p>
               </div>
             ))}
-          </p>
+          </div>
         </div>
       </div>
     </div>

@@ -12,7 +12,7 @@ import "./App.css";
 function App() {
   const [words, setWords] = useState(Words);
   const [newWord, setNewWord] = useState(words[0]);
-  const [disabled, setDisabled] = useState(false);
+  const [disabled, setDisabled] = useState(true);
   const [correctResults, setCorrectResults] = useState([]);
   const [wrongResults, setWrongResults] = useState([]);
   const [countCorrect, setCountCorrect] = useState(0);
@@ -46,6 +46,27 @@ function App() {
     setCountCorrect(0);
     setInputValue("");
   };
+
+  useEffect(() => {
+    if (time <= 30 && time !== 0 && disabled === false) {
+      setTimeout(() => {
+        setTime((prev) => prev - 1);
+      }, 1000);
+    } else if (disabled) {
+      setTime(30);
+      setAnimation(null);
+    } else if (time == 0) {
+      setDisabled(true);
+    }
+
+    if (time <= 10) {
+      setAnimation("scaleNumber 2s infinite");
+    }
+  }, [disabled, time]);
+
+  useEffect(() => {
+    setNewWord(words[randomWord]);
+  }, []);
 
   return (
     <div className="App">

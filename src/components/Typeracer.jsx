@@ -16,11 +16,8 @@ export default function Typeracer({
       <div className="wordOutput">
         <p>{newWord}</p>
       </div>
-      <div
-        className="time"
-        style={{ animation: animation !== null ? animation : "" }}
-      >
-        <p>{time}</p>
+      <div className="time">
+        <p style={{ animation: animation !== null ? animation : "" }}>{time}</p>
       </div>
       <div className="wordValues">
         <input
