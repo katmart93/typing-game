@@ -8,6 +8,7 @@ export default function Typeracer({
   disabled,
   time,
   animation,
+  handleInput,
 }) {
   return (
     <div className="typeRacer">
@@ -24,6 +25,7 @@ export default function Typeracer({
         <input
           type="text"
           disabled={disabled}
+          onKeyDown={(e) => handleInput(e)}
           value={inputValue}
           onChange={(e) => setInputValue(e.target.value)}
           placeholder={disabled ? "" : "Start typing..."}

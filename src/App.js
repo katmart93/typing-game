@@ -22,6 +22,23 @@ function App() {
 
   let randomWord = Math.floor(Math.random() * words.length);
 
+  const checkAnswer = () => {
+    if (inputValue.trim() === newWord) {
+      setCorrectResults((prev) => [...prev, newWord]);
+      setCountCorrect((prev) => prev + 1);
+      return;
+    }
+    setWrongResults((prev) => [...prev, inputValue]);
+  };
+
+  const handleInput = (e) => {
+    if (e.key === "Enter" && inputValue.trim() !== "") {
+      checkAnswer();
+      setNewWord(words[randomWord]);
+      setInputValue("");
+    }
+  };
+
   return (
     <div className="App">
       <Container>
@@ -32,13 +49,14 @@ function App() {
           disabled={disabled}
           time={time}
           animation={animation}
-        />
-        <Results
-          correctResults={correctResults}
-          wrongResults={wrongResults}
-          countCorrect={countCorrect}
+          handleInput={handleInput}
         />
       </Container>
+      <Results
+        correctResults={correctResults}
+        wrongResults={wrongResults}
+        countCorrect={countCorrect}
+      />
     </div>
   );
 }
