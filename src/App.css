@@ -162,10 +162,17 @@ button {
 .results .resultsContainer .wrongResults .row {
   width: 100%;
   padding: 14px;
-  background: #f73859;
   color: #fff;
   border-radius: 4px;
   word-wrap: break-word;
+}
+
+.results .resultsContainer .wrongResults .row {
+  background: #f73859;
+}
+
+.results .resultsContainer .correctResults .row {
+  background: #079d34;
 }
 
 .results .resultsContainer .correctResults .row:not(:last-of-type),
