@@ -9,6 +9,7 @@ export default function Typeracer({
   time,
   animation,
   handleInput,
+  handleStart,
 }) {
   return (
     <div className="typeRacer">
@@ -30,7 +31,7 @@ export default function Typeracer({
           onChange={(e) => setInputValue(e.target.value)}
           placeholder={disabled ? "" : "Start typing..."}
         />
-        <Button />
+        <Button handleStart={handleStart} disabled={disabled} />
       </div>
     </div>
   );

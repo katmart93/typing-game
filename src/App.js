@@ -39,6 +39,14 @@ function App() {
     }
   };
 
+  const handleStart = () => {
+    setDisabled(!disabled);
+    setCorrectResults([]);
+    setWrongResults([]);
+    setCountCorrect(0);
+    setInputValue("");
+  };
+
   return (
     <div className="App">
       <Container>
@@ -50,6 +58,7 @@ function App() {
           time={time}
           animation={animation}
           handleInput={handleInput}
+          handleStart={handleStart}
         />
       </Container>
       <Results
